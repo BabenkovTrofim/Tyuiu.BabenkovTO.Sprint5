@@ -26,7 +26,7 @@ internal class Program
         Console.WriteLine("***************************************************************************");
         DataService ds = new DataService();
         string res = ds.SaveToFileTextData(x);
-        Console.WriteLine($"Файл: {res}");
+        Console.WriteLine("Файл: " + res);
         Console.WriteLine("Создан!");
     }
 }
