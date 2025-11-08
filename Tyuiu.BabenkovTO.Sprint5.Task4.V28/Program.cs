@@ -20,7 +20,7 @@ internal class Program
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
         Console.WriteLine("***************************************************************************");
-        string path = Path.Combine(new string[] { "C:", "DataSprint5", "InPutDataFileTask4V28.txt" });
+        string path = Path.Combine(new string[] { Path.GetTempPath(), "C:", "DataSprint5", "InPutDataFileTask4V28.txt" });
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
