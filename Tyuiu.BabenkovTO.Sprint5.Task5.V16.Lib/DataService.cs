@@ -7,22 +7,24 @@ namespace Tyuiu.BabenkovTO.Sprint5.Task5.V16.Lib
     {
         public double LoadFromDataFile(string path)
         {
+            List<int> del = new List<int>();
             NumberFormatInfo info = new NumberFormatInfo()
             {
-                NumberDecimalSeparator = "."
+                NumberDecimalSeparator = ","
             };
-            double maxDel = 0;
-            string str = File.ReadAllText(path);
-            string[] splitStr = str.Split(' ');
-            for(int i = 0; i < splitStr.Length; i++)
+            string text = File.ReadAllText(path);
+            string[] strings = text.Split(' ');
+            foreach (string s in strings)
             {
-                double a = double.Parse(splitStr[i], info);
-                if((a % 10 == 0) & (a >= maxDel))
+                if (int.TryParse(s.Trim(), out int number))
                 {
-                    maxDel = a;
+                    if(number != 0 && number % 10 == 0)
+                    {
+                        del.Add(number);
+                    }
                 }
             }
-            return Math.Round(maxDel, 3);
+            return del.Max();
         }
     }
 }
